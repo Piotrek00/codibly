@@ -31,29 +31,31 @@ function ColorTable({ kolory, loading }: { kolory: Colory }) {
   }
 
   return (
-    <div>
-      <TableContainer borderRadius="10px" boxShadow="lg">
-        <Table variant="simple" size="lg">
-          <Thead background="#F7FAFC">
-            <Tr>
-              <Th isNumeric>ID</Th>
-              <Th>NAME</Th>
-              <Th isNumeric>YEAR</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {kolory &&
-              Array.isArray(kolory.data) &&
-              kolory.data.map((kolor: Product) => {
-                return <TableRow product={kolor} key={kolor.id} />;
-              })}
-            {kolory && kolory.data && !Array.isArray(kolory.data) && (
-              <TableRow product={kolory.data} key={kolory.data.id} />
-            )}
-          </Tbody>
-        </Table>
-      </TableContainer>
-    </div>
+    <>
+      <div>
+        <TableContainer borderRadius="10px" boxShadow="lg">
+          <Table variant="simple" size="lg">
+            <Thead background="#F7FAFC">
+              <Tr>
+                <Th isNumeric>ID</Th>
+                <Th>NAME</Th>
+                <Th isNumeric>YEAR</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {kolory &&
+                Array.isArray(kolory.data) &&
+                kolory.data.map((kolor: Product) => {
+                  return <TableRow product={kolor} key={kolor.id} />;
+                })}
+              {kolory && kolory.data && !Array.isArray(kolory.data) && (
+                <TableRow product={kolory.data} key={kolory.data.id} />
+              )}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      </div>
+    </>
   );
 }
 

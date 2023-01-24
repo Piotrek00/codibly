@@ -5,15 +5,19 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button, Input } from "@chakra-ui/react";
 
+interface IProductsApiResult {
+  total_pages: number;
+}
+
 export default function Home() {
   const router = useRouter();
 
-  const [data, setData] = useState({});
-  const [page, setPage] = useState(router.query.page ?? 1);
+  const [data, setData] = useState<IProductsApiResult | null>(null);
+  const [page, setPage] = useState<number>(Number(router.query.page) ?? 1);
   const [id, setId] = useState("");
   const [err, setErr] = useState(null);
 
-  const handleNumber = (event) => {
+  const handleNumber = (event: { target: { value: string } }) => {
     const colorId = event.target.value.replace(/\D/g, "");
 
     setId(colorId);
@@ -27,13 +31,13 @@ export default function Home() {
       const result = await fetch(
         "https://reqres.in/api/products?" +
           new URLSearchParams({
-            page: page,
-            per_page: 5,
+            page: String(page),
+            per_page: "5",
             id: id,
           })
       )
         .then((response) => {
-          setData([]);
+          setData(null);
           if (!response.ok) {
             throw Error("Could not fetch the data...");
           }
@@ -50,7 +54,9 @@ export default function Home() {
 
     fetchData();
   }, [page, id, router.isReady]);
-
+  if (data === null) {
+    throw new Error("DATA IS EMPTY");
+  }
   const totalPages: number = data.total_pages;
   console.log(err);
 
