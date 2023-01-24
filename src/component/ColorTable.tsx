@@ -24,12 +24,11 @@ interface Colory {
 
 function ColorTable({ kolory, loading }: { kolory: Colory }) {
   const [search, setSearch] = useState("");
+  const [modalIsOpen, setIsModalOpen] = useState(false);
 
   if (loading) {
     return <Text>...</Text>;
   }
-
-  const [modalIsOpen, setIsModalOpen] = useState(false);
 
   return (
     <div>
