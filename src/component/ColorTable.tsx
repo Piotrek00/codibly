@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import TableRow from "./TableRow";
 
-export default interface Product {
+export interface Product {
   name: string;
   id: number;
   year: number;
@@ -22,7 +22,7 @@ interface Colory {
   data: Product[] | Product;
 }
 
-function ColorTable({ kolory, loading }: { kolory: Colory }) {
+export function ColorTable({ kolory, loading }: { kolory: Colory }) {
   const [search, setSearch] = useState("");
   const [modalIsOpen, setIsModalOpen] = useState(false);
 
@@ -59,4 +59,4 @@ function ColorTable({ kolory, loading }: { kolory: Colory }) {
   );
 }
 
-export default ColorTable;
+// export default ColorTable;

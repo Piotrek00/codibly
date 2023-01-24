@@ -1,8 +1,9 @@
 import { Td, Tr } from "@chakra-ui/table";
 import { useState } from "react";
+import { Product } from "./ColorTable";
 import ProductDetails from "./ProductDetails";
 
-function TableRow({ product }) {
+function TableRow({ product }: { product: Product }) {
   const [openModal, setOpenModal] = useState(false);
 
   return (

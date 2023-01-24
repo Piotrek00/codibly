@@ -1,12 +1,13 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import ColorTable from "../src/component/ColorTable";
+import { ColorTable } from "../src/component/ColorTable";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button, Input } from "@chakra-ui/react";
 
 interface IProductsApiResult {
   total_pages: number;
+  data: any;
 }
 
 export default function Home() {
@@ -55,7 +56,7 @@ export default function Home() {
     fetchData();
   }, [page, id, router.isReady]);
   if (data === null) {
-    throw new Error("DATA IS EMPTY");
+    throw Error("DATA IS EMPTY");
   }
   const totalPages: number = data.total_pages;
   console.log(err);

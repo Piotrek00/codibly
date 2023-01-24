@@ -13,9 +13,15 @@ import {
   Th,
   TableContainer,
 } from "@chakra-ui/react";
+import { type } from "os";
+import { Product } from "./ColorTable";
 import TableRowDetails from "./TableRowDetails";
 
-function ProductDetails({ product, isVisible, setOpenModal }) {
+function ProductDetails(
+  { product }: { product: Product },
+  isVisible: boolean,
+  setOpenModal: (arg0: boolean) => void
+): any {
   return (
     product &&
     isVisible && (
