@@ -1,23 +1,11 @@
 import {
-  Input,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
   Text,
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
-  Td,
-  TableCaption,
   TableContainer,
-  Button,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import TableRow from "./TableRow";

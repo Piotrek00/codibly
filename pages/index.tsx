@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import ColorTable from "../src/component/ColorTable";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button, Input } from "@chakra-ui/react";
@@ -24,9 +23,6 @@ export default function Home() {
       return;
     }
     const fetchData = async () => {
-      // const queryParams = `?page=${page}&per_page=5`;
-      // console.log(id ? `&id=${id}` : "");
-
       const result = await fetch(
         "https://reqres.in/api/products?" +
           new URLSearchParams({

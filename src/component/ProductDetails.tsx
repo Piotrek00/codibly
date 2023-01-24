@@ -1,5 +1,4 @@
 import {
-  Input,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -7,20 +6,13 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Text,
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
-  Td,
-  TableCaption,
   TableContainer,
-  Button,
-  useDisclosure,
 } from "@chakra-ui/react";
-import TableRow from "./TableRow";
 import TableRowDetails from "./TableRowDetails";
 
 function ProductDetails({ product, isVisible, setOpenModal }) {
