@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import ColorTable from "../src/component/ColorTable";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button, Input } from "@chakra-ui/react";
